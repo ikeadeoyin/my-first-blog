@@ -20,10 +20,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'gj&o@fs*mc$8wp6ct3rj8lbc!uf0v%o*j$ujwe$uhe^@=$5gse'
+#SECRET_KEY = 'gj&o@fs*mc$8wp6ct3rj8lbc!uf0v%o*j$ujwe$uhe^@=$5gse'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY','gj&o@fs*mc$8wp6ct3rj8lbc!uf0v%o*j$ujwe$uhe^@=$5gse' )
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False #I used True in production and got errors
 
 ALLOWED_HOSTS = []
 
@@ -121,4 +122,4 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR,'static')
 
-ALLOWED_HOSTS = ['127.0.0.1','pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1','ikeade.pythonanywhere.com'] #Just added the ikeade...
